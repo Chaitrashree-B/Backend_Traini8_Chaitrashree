@@ -23,12 +23,12 @@ Navigate to the project directory.
 
 1.Configure the Database 
 Option 1: MySQL Setup Install MySQL and start the MySQL service.Create a database:
-1 CREATE DATABASE traini8_db; 
-2 Update src/main/resources/application.properties with your MySQL connection details
-spring.datasource.url=jdbc:mysql://localhost:3306/traini8_db 
-spring.datasource.username=root 
-spring.datasource.password=your_password 
-spring.jpa.hibernate.ddl-auto=update 
+i) CREATE DATABASE traini8_db; 
+ii) Update src/main/resources/application.properties with your MySQL connection details
+    spring.datasource.url=jdbc:mysql://localhost:3306/traini8_db 
+    spring.datasource.username=root 
+    spring.datasource.password=your_password 
+    spring.jpa.hibernate.ddl-auto=update 
 
 Option 2: H2 In-Memory Database If you prefer to use the H2 in-memory database, simply update application.properties like this:
 spring.datasource.url=jdbc:h2:mem:traini8_db spring.datasource.driverClassName=org.h2.Driver 
@@ -37,15 +37,15 @@ spring.datasource.password=
 spring.jpa.hibernate.ddl-auto=update 
 spring.h2.console.enabled=true
 
-3. Build and Run the Application
- 1.Ensure Maven and Java 17+ are installed on your machine.
- 2.To build the project, run:
+2. Build and Run the Application
+i)Ensure Maven and Java 17+ are installed on your machine.
+ii)To build the project, run:
    mvn clean install
- 3.To run the application:
+iii)To run the application:
    mvn spring-boot:run
- 4. The application will start on http://localhost:8080.
+iV) The application will start on http://localhost:8080.
   
-4. Testing the APIs
+3. Testing the APIs
 POST API to Create a Training Center
 URL: POST http://localhost:8080/api/training-centers
 Payload (JSON):
@@ -88,11 +88,11 @@ GET API to Fetch All Training Centers
 Test Failure Scenarios
 Missing centerName, centerCode, or incorrect field sizes will trigger validation errors with detailed messages.
 
-5. Running Tests
+4. Running Tests
 The project includes unit tests for the APIs in src/test/java.
- 1. To run tests:
+ i) To run tests:
   mvn test
- 2. A sample test is available in TrainingCenterControllerTest.java:
+ ii) A sample test is available in TrainingCenterControllerTest.java:
     
-6. Exception Handling
+5. Exception Handling
 Errors such as validation failures or incorrect inputs are handled using custom exception handlers to provide clear error messages.
